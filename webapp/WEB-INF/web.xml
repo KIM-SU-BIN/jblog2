@@ -13,6 +13,17 @@
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
 
+	<!-- DispatChServlet Mapping : Front Controller 등록 -->
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
 
 	<!-- Context Listener 등록 -->
 	<listener>
@@ -39,19 +50,6 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
-
-
-	<!-- DispatChServlet Mapping : Front Controller 등록 -->
-	<servlet>
-		<servlet-name>spring</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	</servlet>
-
-
-	<servlet-mapping>
-		<servlet-name>spring</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
 
 
 	<filter-mapping>

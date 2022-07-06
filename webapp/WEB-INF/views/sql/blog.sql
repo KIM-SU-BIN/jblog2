@@ -10,6 +10,10 @@ create table blog (
     primary key(id)
 );
 
+-- 인서트 --
+insert into blog
+values('zoe', '김수빈블로그', 'blogfile');
+
 -- 조회 --
 select * from blog;
 

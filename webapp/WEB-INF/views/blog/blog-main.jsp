@@ -15,7 +15,7 @@
 	<div id="wrap">
 
 		<!-- 개인블로그 해더 -->
-		<c:import url="/WEB-INF/views/includes/blog-header.jsp"></c:import>
+		<c:import url="/WEB-INF/views/includes/main-header.jsp"></c:import>
 		
 		<div id="content" class="clearfix">
 			<div id="profilecate_area">
@@ -116,7 +116,8 @@
 		</div>	
 		<!-- //content -->
 		<div class=></div>
-		<c:import url="/WEB-INF/views/includes/blog-footer.jsp"></c:import>
+		
+		<c:import url="/WEB-INF/views/includes/main-footer.jsp"></c:import>
 		
 	
 	
