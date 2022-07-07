@@ -26,6 +26,7 @@ public class UsersController {
 	// 메소드 일반
 
 //==================================================== 회원가입 =====================================================
+	
 	// 회원가입
 	@RequestMapping(value = "/join", method = { RequestMethod.GET, RequestMethod.POST })
 	public String join(@ModelAttribute UsersVo usersVo) {
@@ -50,12 +51,9 @@ public class UsersController {
 	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
 	public String login(@ModelAttribute UsersVo usersVo, HttpSession session) {
 		System.out.println("UsersController>login");
-		System.out.println("rtr"+ usersVo);
-		
-		
-		UsersVo authUser = usersService.login(usersVo);	 // UserVo를 authUser로 이름을 주고 새로 저장
 
-		
+		UsersVo authUser = usersService.login(usersVo); // UserVo를 authUser로 이름을 주고 새로 저장
+
 		// 로그인시 userVo로 정보를 서비스로 보냄 -> UserVo를 authUser로 이름을 주고 새로 저장 -> authUser
 		// null값인지 확인 ->
 		// authUser가 null이 아니면 session에 저장하고 메인으로 넘어간다.
@@ -67,7 +65,6 @@ public class UsersController {
 			session.setAttribute("authUser", authUser);
 			return "redirect:/main";
 
-			
 		// 실패시
 		} else {
 
@@ -76,8 +73,6 @@ public class UsersController {
 
 		}
 	}
-	
-	
 
 	
 	// 로그인폼(loginForm)

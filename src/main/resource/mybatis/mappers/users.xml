@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.9//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="user">
+<mapper namespace="users">
 
 	<!-- 로그인 -->
-	<select id="getUser" parameterType="com.javaex.vo.UsersVo" resultType="UsersVo">
+	<select id="getUser" parameterType="UsersVo" resultType="UsersVo">
 	<![CDATA[
 		select no,
 			   name
 		from users
-		where id =#{id}
-		and password =#{password}
+		where id = #{id}
+		and password = #{password}
 		
 	]]>
 	</select>

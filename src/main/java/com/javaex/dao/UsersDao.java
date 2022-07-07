@@ -35,7 +35,7 @@ public class UsersDao {
 	public UsersVo getUser(UsersVo usersVo) {
 		System.out.println("UsersDao>getUser");
 
-		UsersVo authUser = sqlSession.selectOne("user.getUser", usersVo);
+		UsersVo authUser = sqlSession.selectOne("users.getUser", usersVo);
 		System.out.println(authUser);
 
 		return authUser;

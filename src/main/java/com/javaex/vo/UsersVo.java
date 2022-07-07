@@ -3,43 +3,42 @@ package com.javaex.vo;
 public class UsersVo {
 	
 	//필드
-	private int userNo;
+	private int no;
 	private String id;
-	private String userName;
+	private String name;
 	private String password;
 	private String joinDate;
 	
 	
-	
+	//생성자
 	public UsersVo( ) {
 		
 	}
 	
-	public UsersVo( String id, String userName, String password, String joinDate) {
+	public UsersVo( String id, String name, String password, String joinDate) {
 		this.id = id;
-		this.userName = userName;
+		this.name = name;
 		this.password = password;
 		this.joinDate = joinDate;
 	}
 	
 	
-	public UsersVo(int userNo, String id, String userName, String password, String joinDate) {
+	public UsersVo(int no, String id, String name, String password, String joinDate) {
 		super();
-		this.userNo = userNo;
+		this.no = no;
 		this.id = id;
-		this.userName = userName;
+		this.name = name;
 		this.password = password;
 		this.joinDate = joinDate;
 	}
 	
 	
-	
-	
-	public int getUserNo() {
-		return userNo;
+	//메소드
+	public int getNo() {
+		return no;
 	}
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
+	public void setNo(int userNo) {
+		this.no = userNo;
 	}
 	public String getId() {
 		return id;
@@ -47,11 +46,11 @@ public class UsersVo {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPassword() {
 		return password;
@@ -67,10 +66,10 @@ public class UsersVo {
 	}
 	
 	
-	
+	//메소드 일반
 	@Override
 	public String toString() {
-		return "UsersVo [userNo=" + userNo + ", id=" + id + ", userName=" + userName + ", password=" + password
+		return "UsersVo [no=" + no + ", id=" + id + ", name=" + name + ", password=" + password
 				+ ", joinDate=" + joinDate + "]";
 	}
 		

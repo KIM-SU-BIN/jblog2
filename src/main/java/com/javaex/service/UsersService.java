@@ -18,24 +18,24 @@ public class UsersService {
 	// 메소드
 
 	// 메소드 일반
-	
-	//회원가입
+
+	// 회원가입
 	public int join(UsersVo usersVo) {
 		System.out.println("UsersService>join");
-		
+
 		// dao를 통해서 데이터 저장
 		int count = usersDao.userInsert(usersVo);
-		
+
 		return count;
 	}
 	
-	
-	//로그인
+
+	// 로그인
 	public UsersVo login(UsersVo usersVo) {
 		System.out.println("UsersService>login");
-		
-		UsersVo authUser = usersDao.getUser(usersVo);	
-		
+
+		UsersVo authUser = usersDao.getUser(usersVo);
+
 		return authUser;
 	}
 
