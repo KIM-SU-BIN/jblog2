@@ -37,7 +37,3 @@ commit;
 
 -- 롤백 --
 rollback;
-
---fk--
-ALTER TABLE users
-ADD CONSTRAINT fk_userfk foreign KEY(id) references blog(id);

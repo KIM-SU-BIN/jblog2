@@ -4,29 +4,25 @@
 <mapper namespace="blog">
 
 	<!-- 쿼리문 -->
-	<select id="getUser" resultType="BlogVo" parameterType="String">
+	<!-- 블로그 정보 가져오기 -->
+	<insert id="blogInsert" parameterType="BlogVo">
 		<![CDATA[
-			select  b.id id
-			        ,userName
-			        ,blogTitle
-			        ,logoFile
-			from users u, blog b
-			where u.id = b.id
-			and 
+			insert into blog
+			values(#{id}, #{userName}, #{logoFile})
 		]]>
-	</select>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	</insert>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </mapper>

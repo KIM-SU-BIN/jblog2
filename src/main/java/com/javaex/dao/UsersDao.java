@@ -18,8 +18,8 @@ public class UsersDao {
 	// 메소드
 
 	// 메소드 일반
-	
-	//회원가입 : 정보저장
+
+	// 회원가입 : 정보저장
 	public int userInsert(UsersVo usersVo) {
 		System.out.println("UsersDao>usersInsert");
 
@@ -28,6 +28,18 @@ public class UsersDao {
 		System.out.println(usersVo);
 
 		return count;
+	}
+	
+
+	// 로그인
+	public UsersVo getUser(UsersVo usersVo) {
+		System.out.println("UsersDao>getUser");
+
+		UsersVo authUser = sqlSession.selectOne("user.getUser", usersVo);
+		System.out.println(authUser);
+
+		return authUser;
+
 	}
 
 }

@@ -39,5 +39,5 @@ commit;
 rollback;
 
 --fk--
-ALTER TABLE post
-ADD CONSTRAINT fk_postfk foreign KEY(cateNo) references category(cateNo);
+ALTER TABLE category
+ADD CONSTRAINT fk_blogfk2 foreign KEY(id) references blog(id);

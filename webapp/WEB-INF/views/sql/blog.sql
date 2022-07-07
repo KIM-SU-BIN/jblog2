@@ -22,3 +22,11 @@ commit;
 
 -- 롤백 --
 rollback;
+
+--fk--
+ALTER TABLE blog
+ADD CONSTRAINT fk_blogfk foreign KEY(id) references users(id);
+
+--지울 때 --
+alter table blog
+drop constraint fk_blogfk;

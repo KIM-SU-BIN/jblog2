@@ -23,9 +23,5 @@ public class BlogMainController {
 		return "main/index";
 	}
 	
-	
-	
-	
-	
 
 }

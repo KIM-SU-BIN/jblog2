@@ -32,9 +32,9 @@ commit;
 -- 롤백 --
 rollback;
 
---fk--
+-- fk --
 ALTER TABLE comments
-ADD CONSTRAINT fk_commentsfk foreign KEY(no) references users(no);
+ADD CONSTRAINT fk_postfk foreign KEY(postNo) references post(postNo);
 
 ALTER TABLE comments
-ADD CONSTRAINT fk_commentsfk2 foreign KEY(postNo) references post(postNo);
+ADD CONSTRAINT fk_usersfk foreign KEY(no) references users(no);

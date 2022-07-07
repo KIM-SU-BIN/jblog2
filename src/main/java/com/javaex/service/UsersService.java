@@ -31,10 +31,12 @@ public class UsersService {
 	
 	
 	//로그인
-	/*public void login () {
+	public UsersVo login(UsersVo usersVo) {
 		System.out.println("UsersService>login");
 		
+		UsersVo authUser = usersDao.getUser(usersVo);	
 		
-	}*/
+		return authUser;
+	}
 
 }
