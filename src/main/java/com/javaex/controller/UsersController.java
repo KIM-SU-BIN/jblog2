@@ -24,6 +24,8 @@ public class UsersController {
 	// 메소드
 
 	// 메소드 일반
+	
+//==================================================== 로그아웃 =====================================================
 
 	// 로그아웃
 	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })

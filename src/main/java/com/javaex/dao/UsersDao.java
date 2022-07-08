@@ -18,7 +18,16 @@ public class UsersDao {
 	// 메소드
 
 	// 메소드 일반
+
+	// 아이디 중복체크
+	public String getId(String id) {
+
+		System.out.println("UsersDao>checkId");
+
+		return sqlSession.selectOne("user.getId", id);
+	}
 	
+
 	// 회원가입 : 정보저장
 	public int userInsert(UsersVo usersVo) {
 		System.out.println("UsersDao>usersInsert");
