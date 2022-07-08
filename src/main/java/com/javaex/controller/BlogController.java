@@ -2,12 +2,11 @@ package com.javaex.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.javaex.service.BlogService;
-import com.javaex.vo.BlogVo;
 
 @Controller
 public class BlogController {
@@ -24,7 +23,7 @@ public class BlogController {
 
 	//메인화면
 	@RequestMapping(value = "/{id}", method = { RequestMethod.GET, RequestMethod.POST })
-	public String blogMain() {
+	public String blogMain(Model model) {
 		System.out.println("BlogController->blogMain()");
 
 
