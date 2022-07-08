@@ -9,7 +9,11 @@
 <title>JBlog</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/jblog.css">
-
+	
+	<!-- js -->
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/assets/js/jquery/jquery-1.12.4.js"></script>
+		
 </head>
 <body>
 	<div id="center-content">
@@ -50,8 +54,9 @@
 					</tr>
 					<tr>
 						<td><span>약관동의</span></td>
-						<td colspan="3"><input id="chkAgree" type="checkbox" name="agree" value="y"> <label for="chkAgree">
-						서비스 약관에 동의합니다.</label></td>
+						<td colspan="3"><input id="chkAgree" type="checkbox"
+							name="agree" value="y"> <label for="chkAgree">
+								서비스 약관에 동의합니다.</label></td>
 					</tr>
 				</table>
 				<div id="btnArea">
@@ -68,18 +73,17 @@
 	</div>
 
 </body>
+
 <script type="text/javascript">
 	
 	<!-- 아이디 중복체크 -->
-	$("#btnIdCheck").on("click", function(){
-		console.log("ID중복버튼클릭");
-
+	$("#btnIdCheck").on("click", function() {
+		
 		var id = $("#txtId").val();
 		console.log(id);
 		
-		
 		$.ajax({
-			url : "${pageContext.request.contextPath }/user/idCk",
+			url : "${pageContext.request.contextPath}/users/checkId",
 			type : "post",
 			//contentType : "application/json",
 			data : {id},
@@ -88,23 +92,23 @@
 				
 				//성공시 처리해야될 코드 작성
 				console.log(result);
-				
 				if(id != null || id != "") {
-				
+					
 					if(result == "success") {
-						$("#tdMsg").text("사용할 수 있는 아이디입니다.");
-						idCk = 1;
+						$("#tdMsg").html("사용할 수 있는 아이디입니다.");
+						checkId = 1;
+						
 					} else {
-						$("#tdMsg").text("다른 아이디로 가입해 주세요.");
+						$("#tdMsg").html("<font color='red'>사용할 수 없는 아이디입니다.</font>");
 					};
 				}
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
 			}
-		});		
-		
+		});
 	});
+	
 
 </script>
 </html>

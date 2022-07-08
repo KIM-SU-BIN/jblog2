@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.javaex.service.UsersService;
 import com.javaex.vo.UsersVo;
@@ -24,7 +25,7 @@ public class UsersController {
 	// 메소드
 
 	// 메소드 일반
-	
+
 //==================================================== 로그아웃 =====================================================
 
 	// 로그아웃
@@ -34,10 +35,10 @@ public class UsersController {
 
 		// 세션값을 지운다
 		session.removeAttribute("authUser");
-		
+
 		// 현재 사용하고 있는 세션 값을 무효화한다.
 		session.invalidate();
-		
+
 		return "user/loginForm";
 	}
 
@@ -59,6 +60,14 @@ public class UsersController {
 		System.out.println("LoginController>joinForm");
 
 		return "user/joinForm";
+	}
+
+	// 아이디 중복체크 (회원가입)
+	@ResponseBody
+	@RequestMapping(value = "/checkId", method = { RequestMethod.GET, RequestMethod.POST })
+	public String idCheck(@ModelAttribute UsersVo userVo) {
+		System.out.println("UsersController->checkId()");
+		return usersService.checkId(userVo.getId());
 	}
 
 //====================================================로그인, 로그인폼==================================================

@@ -4,7 +4,8 @@
 <mapper namespace="users">
 
 	<!-- 로그인 -->
-	<select id="getUser" parameterType="UsersVo" resultType="UsersVo">
+	<select id="getUser" parameterType="UsersVo"
+		resultType="UsersVo">
 	<![CDATA[
 		select no,
 			   name
@@ -24,6 +25,16 @@
 		values(seq_users_no.nextval, #{id}, #{userName}, #{password}, sysdate)
 	]]>
 	</insert>
+	
+
+	<!-- 중복 아이디 찾기 -->
+	<select id="getId" parameterType="String" resultType="UsersVo">
+		<![CDATA[
+			select id
+			from users
+			where id = #{id}
+		]]>
+	</select>
 
 
 </mapper>
