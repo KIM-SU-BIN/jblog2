@@ -22,16 +22,13 @@ public class BlogController {
 
 	// 메소드 일반
 
-	// 회원가입
+	//메인화면
 	@RequestMapping(value = "/{id}", method = { RequestMethod.GET, RequestMethod.POST })
-	public String blogMain(@ModelAttribute BlogVo blogVo) {
+	public String blogMain() {
 		System.out.println("BlogController->blogMain()");
 
-		int count = blogService.join(blogVo);
-		
-		System.out.println("count");
 
-		return "";
+		return "blog/blog-main";
 	}
 	
 

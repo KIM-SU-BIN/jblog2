@@ -19,15 +19,6 @@ public class BlogDao {
 	
 	//메서드 일반
 	
-	// 회원가입 블로그 정보 가져오기
-	public int userInsert(BlogVo blogVo) {
-		System.out.println("BlogDao>userInsert");
-		
-		int count = sqlSession.insert("user.insert", blogVo);
 
-		System.out.println(blogVo);
-
-		return count;
-	}
 
 }

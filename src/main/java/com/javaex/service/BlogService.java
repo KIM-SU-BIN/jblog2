@@ -13,14 +13,4 @@ public class BlogService {
 	@Autowired
 	private BlogDao blogDao;
 
-	// 회원가입 블로그 정보 가져오기
-	public int join(BlogVo blogVo) {
-		System.out.println("BlogService>join");
-
-		// 데이터 저장
-		int count = blogDao.userInsert(blogVo);
-
-		return count;
-	}
-
 }
