@@ -18,6 +18,14 @@ public class UsersService {
 	// 메소드
 
 	// 메소드 일반
+	
+	//로그아웃
+	
+	
+	
+	
+	
+	
 
 	// 회원가입
 	public int join(UsersVo usersVo) {

@@ -24,6 +24,8 @@ public class UsersController {
 	// 메소드
 
 	// 메소드 일반
+	
+	//로그아웃
 
 //==================================================== 회원가입 =====================================================
 	
@@ -49,9 +51,9 @@ public class UsersController {
 
 	// 로그인
 	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
-	public String login(@ModelAttribute UsersVo usersVo, HttpSession session) {
+	public String login(@ModelAttribute UsersVo usersVo, HttpSession session) {		//@ModelAttribute사용하면 정보들을 알아서 Vo로 저장해주는 역할
 		System.out.println("UsersController>login");
-
+		
 		UsersVo authUser = usersService.login(usersVo); // UserVo를 authUser로 이름을 주고 새로 저장
 
 		// 로그인시 userVo로 정보를 서비스로 보냄 -> UserVo를 authUser로 이름을 주고 새로 저장 -> authUser
