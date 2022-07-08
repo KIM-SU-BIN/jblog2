@@ -19,10 +19,6 @@ public class UsersDao {
 
 	// 메소드 일반
 	
-	//로그아웃
-	
-	
-
 	// 회원가입 : 정보저장
 	public int userInsert(UsersVo usersVo) {
 		System.out.println("UsersDao>usersInsert");

@@ -19,13 +19,6 @@ public class UsersService {
 
 	// 메소드 일반
 	
-	//로그아웃
-	
-	
-	
-	
-	
-	
 
 	// 회원가입
 	public int join(UsersVo usersVo) {
@@ -33,6 +26,10 @@ public class UsersService {
 
 		// dao를 통해서 데이터 저장
 		int count = usersDao.userInsert(usersVo);
+		
+		if(count>0) {		//회원가입 후 블로그 생성
+			System.out.println("UsersService>createBlog");
+		}
 
 		return count;
 	}

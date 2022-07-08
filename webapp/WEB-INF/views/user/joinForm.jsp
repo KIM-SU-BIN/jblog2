@@ -50,9 +50,8 @@
 					</tr>
 					<tr>
 						<td><span>약관동의</span></td>
-						<td colspan="3"><input id="chkAgree" type="checkbox"
-							name="agree" value="y"> <label for="chkAgree">서비스
-								약관에 동의합니다.</label></td>
+						<td colspan="3"><input id="chkAgree" type="checkbox" name="agree" value="y"> <label for="chkAgree">
+						서비스 약관에 동의합니다.</label></td>
 					</tr>
 				</table>
 				<div id="btnArea">

@@ -24,11 +24,23 @@ public class UsersController {
 	// 메소드
 
 	// 메소드 일반
-	
-	//로그아웃
+
+	// 로그아웃
+	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
+	public String logout(HttpSession session) {
+		System.out.println("UsersController->logout()");
+
+		// 세션값을 지운다
+		session.removeAttribute("authUser");
+		
+		// 현재 사용하고 있는 세션 값을 무효화한다.
+		session.invalidate();
+		
+		return "user/loginForm";
+	}
 
 //==================================================== 회원가입 =====================================================
-	
+
 	// 회원가입
 	@RequestMapping(value = "/join", method = { RequestMethod.GET, RequestMethod.POST })
 	public String join(@ModelAttribute UsersVo usersVo) {
@@ -51,9 +63,10 @@ public class UsersController {
 
 	// 로그인
 	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
-	public String login(@ModelAttribute UsersVo usersVo, HttpSession session) {		//@ModelAttribute사용하면 정보들을 알아서 Vo로 저장해주는 역할
+	public String login(@ModelAttribute UsersVo usersVo, HttpSession session) { // @ModelAttribute사용하면 정보들을 알아서 Vo로
+																				// 저장해주는 역할
 		System.out.println("UsersController>login");
-		
+
 		UsersVo authUser = usersService.login(usersVo); // UserVo를 authUser로 이름을 주고 새로 저장
 
 		// 로그인시 userVo로 정보를 서비스로 보냄 -> UserVo를 authUser로 이름을 주고 새로 저장 -> authUser
@@ -67,7 +80,7 @@ public class UsersController {
 			session.setAttribute("authUser", authUser);
 			return "redirect:/main";
 
-		// 실패시
+			// 실패시
 		} else {
 
 			System.out.println("로그인 실패");
@@ -76,7 +89,6 @@ public class UsersController {
 		}
 	}
 
-	
 	// 로그인폼(loginForm)
 	@RequestMapping(value = "/loginForm", method = { RequestMethod.GET, RequestMethod.POST })
 	public String loginForm() {
