@@ -13,4 +13,18 @@ public class BlogService {
 	@Autowired
 	private BlogDao blogDao;
 
+	// 생성자
+
+	// 메소드
+
+	// 메소드 일반
+
+	// 메인화면
+	public void getblog() {
+		System.out.println("BlogService>getblog");
+		
+		
+		
+	}
+
 }

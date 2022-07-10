@@ -1,5 +1,7 @@
 package com.javaex.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +26,10 @@ public class BlogController {
 	//메인화면
 	@RequestMapping(value = "/{id}", method = { RequestMethod.GET, RequestMethod.POST })
 	public String blogMain(Model model) {
-		System.out.println("BlogController->blogMain()");
-
+		System.out.println("BlogController>blogMain");
+		
+		Map<String, Object> blogMap = blogService.getBlog(id, cateNo, postNo);
+		model.addAttribute("blogMap", blogMap);
 
 		return "blog/blog-main";
 	}
