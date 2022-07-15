@@ -24,7 +24,7 @@ public class UsersDao {
 
 		System.out.println("UsersDao>checkId");
 
-		return sqlSession.selectOne("user.getId", id);
+		return sqlSession.selectOne("users.getId", id);
 	}
 	
 
@@ -32,7 +32,7 @@ public class UsersDao {
 	public int userInsert(UsersVo usersVo) {
 		System.out.println("UsersDao>usersInsert");
 
-		int count = sqlSession.insert("user.userInsert", usersVo);
+		int count = sqlSession.insert("users.userInsert", usersVo);
 
 		System.out.println(usersVo);
 

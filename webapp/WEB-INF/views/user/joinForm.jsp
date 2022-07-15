@@ -40,7 +40,7 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td id="tdMsg" colspan="2">사용할 수 있는 아이디 입니다.</td>
+						<td id="tdMsg" colspan="2"></td>
 					</tr>
 					<tr>
 						<td><label for="txtPassword">패스워드</label></td>
