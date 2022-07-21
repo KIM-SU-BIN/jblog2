@@ -24,6 +24,7 @@ public class BlogController {
 	// 메소드 일반
 
 	//메인화면
+	/*
 	@RequestMapping(value = "/{id}", method = { RequestMethod.GET, RequestMethod.POST })
 	public String blogMain(Model model) {
 		System.out.println("BlogController>blogMain");
@@ -32,7 +33,7 @@ public class BlogController {
 		model.addAttribute("blogMap", blogMap);
 
 		return "blog/blog-main";
-	}
+	}*/
 	
 
 }
